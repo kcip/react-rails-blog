@@ -18,9 +18,9 @@ end
 
 def create 
 @post = Post.new(post_params)
-post.user = @current_user
+@post.user = @current_user
  if @post.save
-  render json: @post, statue: :created
+  render json: @post, status: :created
  else
   render json: @post.errors, status: :unprocessable_entity
  end
@@ -37,7 +37,7 @@ def set_post
 end
 # Only allow a trusted parameter "white list" through.
 def post_params
- params.require(:post).permot(:post_title, :post_content, :post_photo)
+ params.require(:post).permit(:post_title, :post_content, :post_photo)
 end
 
 end
