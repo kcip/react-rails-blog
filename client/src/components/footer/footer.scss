@@ -1,0 +1,9 @@
+@import '../../sass-mixins/mixins.scss';
+
+.footer {
+ background: pink;
+ min-width: 100vw;
+ height: 4rem;
+ @include flex-center;
+
+}
